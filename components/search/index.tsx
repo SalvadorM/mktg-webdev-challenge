@@ -4,7 +4,8 @@
  */
 
 //Import the new components to break down the code a bit
-import SearchInputButton from './SearchButton'
+import SearchInputFilter from './SearchInputFilter'
+import ProfileImageFilter from './ProfileImageFilter'
 
 export interface SearchProps {
 	onInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -17,12 +18,9 @@ export default function Search({
 }: SearchProps) {
 	return (
 		<>
-			<SearchInputButton onChange={onInputChange} />
+			<SearchInputFilter onChange={onInputChange} />
 
-			<div>
-				<input type="checkbox" onChange={onProfileChange} />
-				<div>Hide people missing a profile image</div>
-			</div>
+			<ProfileImageFilter onChange={onProfileChange} />
 		</>
 	)
 }

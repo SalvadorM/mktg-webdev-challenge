@@ -33,8 +33,71 @@
 }
 
 .subTitle {
+	margin-top: 0;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 28px;
+	color: rgba(78, 81, 93, 1);
+}
+
+/* 
+Search Bar Contianer
+*/
+.searchBarContainer {
+	width: 100%;
+	max-width: 582px;
+	border: 1px solid rgba(207, 209, 217, 1);
+	border-radius: 20px;
+	padding: 10px 15px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+.searchInput {
+	border: none;
+	width: 100%;
+	padding-left: 15px;
+	font-family: Open Sans, sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 28px;
+	letter-spacing: 0;
+	color: rgba(76, 79, 91, 1);
+
+	&:focus {
+		outline: none;
+	}
+
+	&:placeholder {
+		font-family: Open Sans, sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 28px;
+		letter-spacing: 0;
+		color: rgba(152, 156, 172, 1);
+	}
+}
+
+/* //ProfileImageFilterProps CSS */
+.imageFilterContainer {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 2vh 0;
+}
+.imageFilterInput {
+	width: 20px;
+	height: 20px;
+	margin-right: 1vw;
+}
+.imageFilterText {
+	font-family: Open Sans, sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: 0;
 	color: rgba(78, 81, 93, 1);
 }
