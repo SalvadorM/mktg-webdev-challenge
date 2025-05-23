@@ -7,7 +7,8 @@
 
 .g-nav {
 	background: var(--white);
-	border-bottom: 1px solid var(--gray-5);
+
+	/* border-bottom: 1px solid var(--gray-5); */
 	color: var(--gray-1);
 	position: relative;
 	z-index: 666666667; /* higher than OptinMonster */

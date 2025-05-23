@@ -21,6 +21,9 @@ import Profile from 'components/profile'
 import Search from 'components/search'
 import DepartmentFilter from 'components/departmentFilter'
 
+//CSS Imports
+import MainSearchContainer from '../../components/search/index.module.css'
+
 interface Props {
 	allPeople: PersonRecord[]
 	departmentTree: DepartmentTree
@@ -76,11 +79,12 @@ export default function PeoplePage({
 
 	return (
 		<main className="g-grid-container">
-			<div>
-				<div>
-					<h1>HashiCorp Humans</h1>
-					<span>Find a HashiCorp human</span>
+			<div className={MainSearchContainer.searchContainerWrapper}>
+				<div className={MainSearchContainer.mainTitleWrapper}>
+					<h1 className={MainSearchContainer.mainTitle}>HashiCorp Humans</h1>
+					<p className={MainSearchContainer.subTitle}>Find a HashiCorp human</p>
 				</div>
+
 				<Search
 					onInputChange={(e: React.ChangeEvent<HTMLInputElement>) => {
 						setSearchingName(e.target.value)
@@ -95,6 +99,7 @@ export default function PeoplePage({
 					}
 				/>
 			</div>
+
 			<div>
 				<aside>
 					<DepartmentFilter
@@ -112,6 +117,7 @@ export default function PeoplePage({
 						departmentTree={departmentTree}
 					/>
 				</aside>
+
 				<ul>
 					{peopleFiltered.length === 0 && (
 						<div>
