@@ -11,6 +11,9 @@ import {
 	Department,
 } from 'types'
 
+// This function is used in departmentRecordsToDepartmentTree to format DepartmentRecord
+// using the reduce function on departments, it return a new map {} with the key being the deparment ID
+// copying item and also adding an empty children[]
 export const buildChildren = (
 	departments: DepartmentNode[]
 ): Record<string, DepartmentRecord> => {
@@ -24,6 +27,11 @@ export const buildChildren = (
 }
 
 // TODO: There is a bug in this function that is causing the DepartmentFilter component to not render correctly
+
+//creates a list of deparments with formatted children[]
+// variable currentItemWithChildren takes the formatter deparmentrecord
+// lines 45 - 49 are only adding nested deparment children to the currentItemWithChildren - this is correct but
+// if there is no currentItemParentId, meaning this is the actual parent then we need to add it the return nestedList to add nestedList
 export const departmentRecordsToDepartmentTree = (
 	departments: DepartmentNode[]
 ): DepartmentRecord[] => {
@@ -38,6 +46,8 @@ export const departmentRecordsToDepartmentTree = (
 				listWithChildren[currentItemParentId].children.push(
 					currentItemWithChildren
 				)
+			} else {
+				nestedList.push(currentItemWithChildren)
 			}
 
 			return nestedList
