@@ -2,7 +2,7 @@
  * Copyright (c) HashiCorp, Inc.
  * SPDX-License-Identifier: MPL-2.0
  */
- 
+
 import { useState } from 'react'
 import s from './style.module.css'
 import Image from 'next/image'
@@ -27,6 +27,7 @@ export default function DepartmentFilter({
 	return (
 		<div className={s.container}>
 			<h2 className={s.title}>Filter By Department</h2>
+
 			<button
 				className={`${s.clearFilterButton} ${
 					filteredDepartmentIds.length === 0 ? s.notVisible : ''
@@ -44,6 +45,7 @@ export default function DepartmentFilter({
 				/>
 				Clear Filters
 			</button>
+
 			<div className={s.departmentFilterTreeContainer}>
 				<DepartmentFilterTree
 					departmentTree={departmentTree}

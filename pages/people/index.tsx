@@ -17,12 +17,12 @@ import {
 } from '../../utilities'
 import query from './query.graphql'
 
-import Profile from 'components/profile'
 import Search from 'components/search'
 import DepartmentFilter from 'components/departmentFilter'
+import ProfileListing from 'components/profile/ProfileListing'
 
 //CSS Imports
-import MainSearchContainer from '../../components/search/index.module.css'
+import searchCSS from '../../components/search/index.module.css'
 
 interface Props {
 	allPeople: PersonRecord[]
@@ -79,10 +79,10 @@ export default function PeoplePage({
 
 	return (
 		<main className="g-grid-container">
-			<div className={MainSearchContainer.searchContainerWrapper}>
-				<div className={MainSearchContainer.mainTitleWrapper}>
-					<h1 className={MainSearchContainer.mainTitle}>HashiCorp Humans</h1>
-					<p className={MainSearchContainer.subTitle}>Find a HashiCorp human</p>
+			<div className={searchCSS.searchContainerWrapper}>
+				<div className={searchCSS.mainTitleWrapper}>
+					<h1 className={searchCSS.mainTitle}>HashiCorp Humans</h1>
+					<p className={searchCSS.subTitle}>Find a HashiCorp human</p>
 				</div>
 
 				<Search
@@ -100,8 +100,8 @@ export default function PeoplePage({
 				/>
 			</div>
 
-			<div>
-				<aside>
+			<div className={searchCSS.resultDepartmentFilterGrid}>
+				<aside className={searchCSS.departmentFilterWrapper}>
 					<DepartmentFilter
 						filteredDepartmentIds={filteredDepartmentIds}
 						clearFiltersHandler={() => {
@@ -118,24 +118,8 @@ export default function PeoplePage({
 					/>
 				</aside>
 
-				<ul>
-					{peopleFiltered.length === 0 && (
-						<div>
-							<span>No results found.</span>
-						</div>
-					)}
-					{peopleFiltered.map((person: PersonRecord) => {
-						return (
-							<li key={person.id}>
-								<Profile
-									imgUrl={person.avatar?.url}
-									name={person.name}
-									title={person.title}
-									department={person.department.name}
-								/>
-							</li>
-						)
-					})}
+				<ul className={searchCSS.resultsWrapper}>
+					<ProfileListing peopleFiltered={peopleFiltered} />
 				</ul>
 			</div>
 		</main>

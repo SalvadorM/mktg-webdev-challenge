@@ -101,3 +101,24 @@ Search Bar Contianer
 	letter-spacing: 0;
 	color: rgba(78, 81, 93, 1);
 }
+
+/*  RESULT / DEPARTMENT FILTER  */
+.resultDepartmentFilterGrid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+.departmentFilterWrapper {
+	grid-column: 1 / 2;
+}
+.resultsWrapper {
+	grid-column: 2 / 5;
+	padding: 0;
+}
+
+/*  RESULT CONTAINER WRAPPER */
+.resultsContainerWrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 30px;
+	list-style: none;
+}
