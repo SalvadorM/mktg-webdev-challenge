@@ -15,13 +15,13 @@ export default function ProfileListing({
 	return (
 		<div className={searchCSS.resultsContainerWrapper}>
 			{peopleFiltered.length === 0 && (
-				<div>
+				<div className={searchCSS.noResults}>
 					<span>No results found.</span>
 				</div>
 			)}
 
 			{peopleFiltered.map((person: PersonRecord) => (
-				<li key={person.id}>
+				<li key={person.id} className={searchCSS.resultContainerWrapper}>
 					<Profile
 						imgUrl={person.avatar?.url}
 						name={person.name}

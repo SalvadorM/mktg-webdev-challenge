@@ -70,7 +70,7 @@
 
 .departmentFilterTreeIext {
 	&:hover {
-		text-decoration: underline;
+		cursor: pointer;
 		color: #1563ff;
 	}
 
@@ -93,7 +93,7 @@
 	appearance: none;
 	border: none;
 	background: none;
-	margin-left: -22px;
+	margin-left: -20px;
 }
 
 .caretIconOpen {

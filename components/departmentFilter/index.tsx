@@ -8,7 +8,7 @@ import s from './style.module.css'
 import Image from 'next/image'
 
 import xIcon from './img/xIcon.svg'
-import caratIcon from './img/carat.svg'
+import caratIcon from './img/AltCarat.svg'
 import { Department, DepartmentRecord, DepartmentTree } from 'types'
 
 export interface DepartmentFilterProps {
